@@ -1,71 +1,34 @@
-# identify-duplicate-properties README
+# 🚀 Identify Duplicate Properties
 
-This is the README for your extension "identify-duplicate-properties". After writing up a brief description, we recommend including the following sections.
+**Identify Duplicate Properties** is a VS Code extension that helps you identify and highlight duplicate property keys in your properties files. 🧐
 
-## Features
+[![Version](https://img.shields.io/visual-studio-marketplace/v/tirthpatel.console-log-vs-code-extension)](https://marketplace.visualstudio.com/items?itemName=tirthpatel.console-log-vs-code-extension)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/tirthpatel.console-log-vs-code-extension)](https://marketplace.visualstudio.com/items?itemName=tirthpatel.console-log-vs-code-extension)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## ✨ Features
 
-For example if there is an image subfolder under your extension project workspace:
+- **Duplicate Key Highlighting:** Automatically highlights duplicate property keys in properties files. 🔍
+- **Real-Time Updates:** Updates the error highlights in real-time as you modify the current file or change the file. 🔄
 
-\!\[feature X\]\(images/feature-x.png\)
+## 💡 How to Use
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. 📦 Install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=tirthpatel.console-log-vs-code-extension).
+2. 👉 Open any `.properties` file in the editor.
+3. 🚀 To check for duplicates and highlight them, run the "Duplicate: Toggle Realtime Duplicate Properties Check" command from the Command Palette (`Ctrl+Shift+P`).
+4. 🚨 Duplicated property keys will be highlighted with red wavy underlines.
 
-## Requirements
+## 🐞 Bug Reports and Feature Requests
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+If you encounter any bugs or have suggestions for new features, please create an issue on [GitHub](https://github.com/tirth-2001/identify-duplicate-properties-vscode-extension).
 
-## Extension Settings
+## 📜 License
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+This extension is licensed under the MIT License.
 
-For example:
+## 👨‍💻 Developer
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Made with ❤️ from India <br/>By [Tirth Patel](https://tirth-patel.vercel.app)<br/>Github - [tirth-2001](https://github.com/tirth-2001)
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Enjoy using extension!** If you find it helpful, consider [leaving a review](https://marketplace.visualstudio.com/items?itemName=tirthpatel.console-log-vs-code-extension&ssr=false#review-details). Your feedback is highly appreciated.
