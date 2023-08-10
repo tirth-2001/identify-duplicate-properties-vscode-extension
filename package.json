@@ -1,8 +1,10 @@
 {
   "name": "identify-duplicate-properties",
-  "displayName": "identify-duplicate-properties",
-  "description": "Identify duplicate properties in file",
-  "version": "0.0.1",
+  "displayName": "Identify Duplicate Properties",
+  "description": "Realtime and static checks for duplicate properties in file",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publisher": "tirthpatel",
   "icon": "assets/icon.png",
   "repository": {
     "type": "git",
@@ -38,12 +40,10 @@
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint && yarn run prettier.check",
+    "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "vscode:publish": "bash tools/publish/publish.sh",
-    "prettier.check": "prettier --check \"src/**/*.ts\"",
-    "prettier.write": "prettier --write \"src/**/*.ts\""
+    "vscode:publish": "bash tools/publish/publish.sh"
   },
   "devDependencies": {
     "@types/vscode": "^1.81.0",
