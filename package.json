@@ -2,7 +2,7 @@
   "name": "identify-duplicate-properties",
   "displayName": "Identify Duplicate Properties",
   "description": "Realtime and static checks for duplicate properties in file",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "publisher": "tirthpatel",
   "icon": "assets/icon.png",
