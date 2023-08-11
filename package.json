@@ -2,7 +2,7 @@
   "name": "identify-duplicate-properties",
   "displayName": "Identify Duplicate Properties",
   "description": "Realtime and static checks for duplicate properties in file",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "publisher": "tirthpatel",
   "icon": "assets/icon.png",
@@ -11,7 +11,7 @@
     "url": "https://github.com/tirth-2001/identify-duplicate-properties-vscode-extension"
   },
   "engines": {
-    "vscode": "^1.81.0"
+    "vscode": "^1.0.0"
   },
   "categories": [
     "Programming Languages"
