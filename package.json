@@ -11,7 +11,7 @@
     "url": "https://github.com/tirth-2001/identify-duplicate-properties-vscode-extension"
   },
   "engines": {
-    "vscode": "^1.0.0"
+    "vscode": "^1.5.0"
   },
   "categories": [
     "Programming Languages"
@@ -46,7 +46,7 @@
     "vscode:publish": "bash tools/publish/publish.sh"
   },
   "devDependencies": {
-    "@types/vscode": "^1.81.0",
+    "@types/vscode": "^1.5.0",
     "@types/glob": "^8.0.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
