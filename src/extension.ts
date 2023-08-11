@@ -14,6 +14,7 @@ interface DuplicatePropertyRange {
 let isRealtimeActive = true
 let duplicatedPropertyRanges: DuplicatePropertyRange[] = []
 let activeEditor = vscode.window.activeTextEditor
+let statusBarItem: vscode.StatusBarItem
 
 const duplicateDecorationType = vscode.window.createTextEditorDecorationType({
   borderWidth: '1px',
@@ -30,6 +31,12 @@ const duplicateDecorationType = vscode.window.createTextEditorDecorationType({
     overviewRulerColor: 'red',
   },
 })
+
+const supportedFileTypes = ['properties', 'java-properties']
+
+const shouldActivateForFile = (document: vscode.TextDocument) => {
+  return supportedFileTypes.includes(document.languageId)
+}
 
 const updateErrorDecorationsInRealtime = () => {
   if (!activeEditor) {
@@ -110,8 +117,19 @@ const checkDuplicatesForCurrentFile = async () => {
   return duplicatedPropertyRanges.length
 }
 
+const showStatusBarInfo = () => {
+  statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100)
+  statusBarItem.text = '$(warning) Duplicate Check' + (isRealtimeActive ? ' (ON)' : ' (OFF)')
+  statusBarItem.tooltip = 'Click to toggle realtime duplicate properties check'
+  statusBarItem.command = ExtensionCommands.toggleRealtimeCheck
+
+  statusBarItem.show()
+}
+
 const activateRealtimeChecks = (context: vscode.ExtensionContext) => {
   activeEditor = vscode.window.activeTextEditor
+
+  showStatusBarInfo()
 
   if (activeEditor) {
     updateErrorDecorationsInRealtime()
@@ -120,7 +138,7 @@ const activateRealtimeChecks = (context: vscode.ExtensionContext) => {
   context.subscriptions.push(
     vscode.window.onDidChangeActiveTextEditor((editor) => {
       activeEditor = editor
-      if (editor) {
+      if (isRealtimeActive && editor && shouldActivateForFile(editor.document)) {
         updateErrorDecorationsInRealtime()
       }
     }),
@@ -128,7 +146,12 @@ const activateRealtimeChecks = (context: vscode.ExtensionContext) => {
 
   context.subscriptions.push(
     vscode.workspace.onDidChangeTextDocument((event) => {
-      if (isRealtimeActive && activeEditor && event.document === activeEditor.document) {
+      if (
+        isRealtimeActive &&
+        activeEditor &&
+        shouldActivateForFile(event.document) &&
+        event.document === activeEditor.document
+      ) {
         updateErrorDecorationsInRealtime()
       }
     }),
@@ -151,6 +174,7 @@ const activateRealtimeChecks = (context: vscode.ExtensionContext) => {
         activeEditor?.setDecorations(duplicateDecorationType, [])
         duplicatedPropertyRanges = []
       }
+      statusBarItem.text = '$(warning) Duplicate Check' + (isRealtimeActive ? ' (ON)' : ' (OFF)')
     }),
   )
 
@@ -164,7 +188,6 @@ const activateRealtimeChecks = (context: vscode.ExtensionContext) => {
 
 exports.activate = activateRealtimeChecks
 
-// This method is called when your extension is deactivated
 export function deactivate() {
   console.log('Extension deactivated')
 }

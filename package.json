@@ -17,7 +17,8 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onLanguage:properties"
+    "onLanguage:properties",
+    "onLanguage:java-properties"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -32,7 +33,7 @@
       },
       {
         "command": "identify-duplicate-properties.removeDuplicateErrorDecoration",
-        "title": "Duplicate: Remove Duplicate Properties Error"
+        "title": "Duplicate: Hide Duplicate Properties Error"
       }
     ]
   },
